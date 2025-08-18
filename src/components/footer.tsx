@@ -9,13 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="lg:col-span-1">
-            <div className="text-3xl font-bold text-orange-600 mb-4">
-              I<span className="text-white">4</span>U
-            </div>
-            <h3 className="text-2xl font-bold mb-4">I For You</h3>
+           <img src="/images/LOGO.jpg" className="w-8 h-8"/>
+            <h3 className="text-2xl font-bold mb-4">Unity multiplies impact.</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              We're dedicated to sharing the love of Christ with those in need. Through compassion, we aim to make a
-              meaningful impact in lives and communities.
+            A world where every woman, child, and underserved community has access to education, healthcare, legal support,
+             and the tools to rise above poverty and injustice — empowering them to live with dignity & freedom
+
             </p>
             <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full">CONTACT US</Button>
           </div>
@@ -31,7 +30,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  I4U Program
+                Global Awareness 
                 </a>
               </li>
               <li>
@@ -41,7 +40,8 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  Cash Sharing
+                Human Rights Protection
+
                 </a>
               </li>
             </ul>
@@ -53,17 +53,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  I4U Fellowship
+                  About Us
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  I4U Program
+                  OUr Program
                 </a>
               </li>
               <li>
                 <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                  Events Website
+                  Gallery
                 </a>
               </li>
             </ul>
@@ -104,22 +104,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-gray-400 text-sm mb-4 md:mb-0">©2025 I4U Fellowship. Designed by Hanan Software</div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                About Us
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
-                Cookies Settings
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+     
     </footer>
   )
 }

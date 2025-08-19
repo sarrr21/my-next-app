@@ -14,7 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <StatsSection />
       <HelpingHandSection />
-      <VolunteersPage />
+      
       <Footer />
     </main>
   )

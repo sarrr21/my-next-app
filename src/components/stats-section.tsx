@@ -3,7 +3,7 @@ import { ArrowRight, Puzzle, Lightbulb, Heart } from "lucide-react"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 lg:py-16 px-2 sm:px-4 lg:px-6">
+    <div className=" bg-gray-50 py-8 sm:py-12 lg:py-16 px-2 sm:px-4 lg:px-6">
       <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Column */}
@@ -19,9 +19,9 @@ export default function HomePage() {
 
             <div className="relative">
               <img
-                src="/images/image5.png"
-                alt="Group photo of Caring Hearts volunteers and members standing together"
-                className="w-full rounded-lg shadow-lg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/founder.JPEG-mcBYKoPtV4tJcU3yCRbV1CJ5KEzIc3.jpeg"
+                alt="Professional portrait of Tausi Likokola, founder, in red business suit"
+                className="w-full h-64 sm:h-80 lg:h-96 xl:h-[28rem] rounded-lg shadow-lg object-contain bg-gray-100"
               />
             </div>
 
@@ -38,15 +38,15 @@ export default function HomePage() {
           <div className="space-y-6 sm:space-y-8 lg:pt-16">
             <div className="space-y-4 sm:space-y-6">
               <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                The Tausi Likokola Global Empowerment Foundation (TLGEF) is a nonprofit organization to be incorporated
-                in the State of Georgia, United States, with a global mission focused especially on East Africa and
-                Tanzania. Founded by internationally recognized author, former model, and human rights advocate Tausi
+                The Tausi Likokola Global Empowerment Foundation (TLGEF) is a nonprofit organization corporated in the
+                State of Georgia, United States, with a global mission focused especially on East Africa and Tanzania.
+                Founded by internationally recognized author, former fashion model, and human rights advocate Tausi
                 Likokola, the foundation aims to make a lasting impact on vulnerable populations through education,
                 health support, legal
               </p>
 
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                To empower vulnerable communities globally especially in Tanzania and East Africa through education,
+                To empower vulnerable communities globally in the US and Africa especially in Tanzania and East Africa through education,
                 healthcare access, legal advocacy, and sustainable development. We seek to uplift women and girls by
                 providing sanitary products, mentorship, workshops, and legal resources while amplifying human rights
                 and social
@@ -60,7 +60,7 @@ export default function HomePage() {
                   <Puzzle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">6</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">600</div>
                   <div className="text-gray-600 font-medium text-sm sm:text-base">Families We</div>
                   <div className="text-gray-600 font-medium text-sm sm:text-base">Helped since 2021</div>
                 </div>
@@ -71,9 +71,9 @@ export default function HomePage() {
                   <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                 </div>
                 <div className="space-y-1">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">2K</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Total Clothes We</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Collected</div>
+                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">1 K</div>
+                  <div className="text-gray-600 font-medium text-sm sm:text-base">Sanitary Pads</div>
+                  <div className="text-gray-600 font-medium text-sm sm:text-base">Distributed</div>
                 </div>
               </div>
 

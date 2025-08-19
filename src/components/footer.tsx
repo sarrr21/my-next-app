@@ -5,12 +5,12 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
           <div className="lg:col-span-1">
-           <img src="/images/LOGO.jpg" className="w-8 h-8"/>
-            <h3 className="text-2xl font-bold mb-4">Unity multiplies impact.</h3>
+           <img src="/images/Logo1.PNG" className="w-8 h-8"/>
+            <h3 className="text-2xl font-bold mb-4 mt-2">Unity multiplies impact.</h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
             A world where every woman, child, and underserved community has access to education, healthcare, legal support,
              and the tools to rise above poverty and injustice — empowering them to live with dignity & freedom

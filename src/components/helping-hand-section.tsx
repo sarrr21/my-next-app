@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function CausesPage() {
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className=" bg-slate-900">
       {/* Our Causes Section */}
       <div className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-slate-900">
         <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
@@ -24,7 +24,7 @@ export default function CausesPage() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/20">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src="/classroom-study.png"
+                  src="/images/image6.png"
                   alt="Children studying in classroom"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -56,7 +56,7 @@ export default function CausesPage() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/20">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src="/hygiene-workshop.png"
+                  src="/images/image7.jpg"
                   alt="Women in health education workshop"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -87,7 +87,7 @@ export default function CausesPage() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src="/legal-aid-workshop.png"
+                  src="/images/image9.jpg"
                   alt="Legal aid workshop"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />
@@ -119,7 +119,7 @@ export default function CausesPage() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
               <div className="relative h-40 sm:h-48 overflow-hidden">
                 <img
-                  src="/entrepreneurship-workshop.png"
+                  src="/images/image8.jpg"
                   alt="Entrepreneurship workshop"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />

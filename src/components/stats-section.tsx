@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Puzzle, Lightbulb, Heart } from "lucide-react"
+import { ArrowRight, Puzzle, Lightbulb, Heart, } from "lucide-react"
+import { Badge } from "./ui/badge"
 
 export default function HomePage() {
   return (
@@ -19,12 +20,12 @@ export default function HomePage() {
 
             <div className="relative">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/founder.JPEG-mcBYKoPtV4tJcU3yCRbV1CJ5KEzIc3.jpeg"
+                src="/images/image5.png"
                 alt="Professional portrait of Tausi Likokola, founder, in red business suit"
                 className="w-full h-64 sm:h-80 lg:h-96 xl:h-[28rem] rounded-lg shadow-lg object-contain bg-gray-100"
               />
             </div>
-
+          <a href="/about"> 
             <Button
               variant="outline"
               className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium bg-transparent text-sm sm:text-base"
@@ -32,6 +33,7 @@ export default function HomePage() {
               ABOUT MORE
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+            </a>
           </div>
 
           {/* Right Column */}
@@ -52,45 +54,45 @@ export default function HomePage() {
                 and social
               </p>
             </div>
-
-            {/* Statistics Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8">
-              <div className="text-center space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto">
-                  <Puzzle className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">600</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Families We</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Helped since 2021</div>
-                </div>
+            <section className="py-20 px-4">
+        <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="font-serif text-4xl font-bold text-foreground">Meet Our Founder</h2>
+              <h3 className="font-serif text-2xl font-semibold text-orange-600">Tausi Likokola</h3>
+              <div className="flex flex-wrap gap-2 mb-4 ">
+                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Author</Badge>
+                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Former Fashion Model</Badge>
+                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Entrepreneur</Badge>
+                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Humanitarian</Badge>
               </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Tausi Likokola is an internationally respected author, mentor, human rights advocate, and former
+                international fashion model. She has been recognized for her extensive humanitarian work, including
+                co-founding The Tausi AIDS Fund (TAF) and contributing to numerous charitable causes throughout Africa,
+                Europe, and the United States.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Her work has inspired thousands to rise beyond their circumstances through faith, education,
+                empowerment, and compassion.
+              </p>
+            </div>
+            <div>
+              <img
+                src="/african-woman-leader.png"
+                alt="Tausi Likokola, Founder"
+                className="rounded-lg shadow-lg w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="text-center space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto">
-                  <Lightbulb className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">1 K</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Sanitary Pads</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Distributed</div>
-                </div>
-              </div>
 
-              <div className="text-center space-y-3 sm:space-y-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500 rounded-lg flex items-center justify-center mx-auto">
-                  <Heart className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
-                </div>
-                <div className="space-y-1">
-                  <div className="text-3xl sm:text-4xl font-bold text-gray-900">10+</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">Events Organized</div>
-                  <div className="text-gray-600 font-medium text-sm sm:text-base">this year</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    
   )
 }

@@ -37,25 +37,7 @@ export default function AboutPage() {
                 className="rounded-lg shadow-lg w-full"
               />
             </div>
-            <div className="space-y-8">
-              <div>
-                <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Vision</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  A world where every woman, child, and underserved community has access to education, healthcare, legal
-                  support, and the tools to rise above poverty and injustice — empowering them to live with dignity &
-                  freedom.
-                </p>
-              </div>
-              <div>
-                <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed">
-                  To empower vulnerable communities globally, especially in Tanzania and East Africa, through education,
-                  healthcare access, legal advocacy, and sustainable development. We seek to uplift women and girls by
-                  providing sanitary products, mentorship, workshops, and legal resources while amplifying human rights
-                  and social justice.
-                </p>
-              </div>
-            </div>
+           
           </div>
         </div>
       </section>
@@ -66,33 +48,7 @@ export default function AboutPage() {
       <section className="py-20 px-4">
         <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h2 className="font-serif text-4xl font-bold text-foreground">Meet Our Founder</h2>
-              <h3 className="font-serif text-2xl font-semibold text-orange-600">Tausi Likokola</h3>
-              <div className="flex flex-wrap gap-2 mb-4 ">
-                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Author</Badge>
-                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Former Fashion Model</Badge>
-                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Entrepreneur</Badge>
-                <Badge variant="secondary" className="bg-orange-600 hover:bg-orange-700">Humanitarian</Badge>
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                Tausi Likokola is an internationally respected author, mentor, human rights advocate, and former
-                international fashion model. She has been recognized for her extensive humanitarian work, including
-                co-founding The Tausi AIDS Fund (TAF) and contributing to numerous charitable causes throughout Africa,
-                Europe, and the United States.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Her work has inspired thousands to rise beyond their circumstances through faith, education,
-                empowerment, and compassion.
-              </p>
-            </div>
-            <div>
-              <img
-                src="/african-woman-leader.png"
-                alt="Tausi Likokola, Founder"
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
+            
           </div>
         </div>
       </section>

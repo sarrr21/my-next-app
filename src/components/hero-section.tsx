@@ -90,7 +90,7 @@ export default function HeroSection() {
             {/* Text Content */}
             <div className="text-white space-y-8">
               <div className="space-y-4">
-                <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight">
+                <h1 className="text-3xl md:text-6xl font-serif font-bold leading-tight">
                   <span
                     className={`block transition-all duration-1000 delay-200 ${
                       textVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"

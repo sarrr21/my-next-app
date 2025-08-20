@@ -81,7 +81,7 @@ export default function Navbar() {
               <a href="/" className="text-gray-900 block px-3 py-2 text-base font-sans font-medium">
                 Home
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
+              <a href="/about" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 About
               </a>
               <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">

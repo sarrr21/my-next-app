@@ -37,15 +37,7 @@ export default function CausesPage() {
                   Support our mission to provide scholarship programs for underprivileged children and distribute
                   educational resources...
                 </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-600">Raised: $42,368</span>
-                    <span className="text-gray-600">Goal: $50,000</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-orange-500 h-2 rounded-full" style={{ width: "85%" }}></div>
-                  </div>
-                </div>
+                
                 <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
                   DONATE NOW
                 </Button>
@@ -68,16 +60,8 @@ export default function CausesPage() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Join us in providing sanitary pads to girls in need and conducting health education workshops...
                 </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-600">Raised: $58,012</span>
-                    <span className="text-gray-600">Goal: $65,000</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-green-500 h-2 rounded-full" style={{ width: "89%" }}></div>
-                  </div>
-                </div>
-                <Button className="w-full bg-green-500 hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+                
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-green-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
                   DONATE NOW
                 </Button>
               </div>
@@ -100,16 +84,8 @@ export default function CausesPage() {
                   Witness the incredible journey of providing legal aid workshops for women and vulnerable
                   populations...
                 </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-600">Raised: $27,984</span>
-                    <span className="text-gray-600">Goal: $35,000</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-blue-500 h-2 rounded-full" style={{ width: "80%" }}></div>
-                  </div>
-                </div>
-                <Button className="w-full bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-blue-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
                   DONATE NOW
                 </Button>
               </div>
@@ -129,16 +105,8 @@ export default function CausesPage() {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Unleash the potential through entrepreneurship, leadership, and business skill development programs...
                 </p>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs sm:text-sm">
-                    <span className="text-gray-600">Raised: $28,349</span>
-                    <span className="text-gray-600">Goal: $30,000</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div className="bg-purple-500 h-2 rounded-full" style={{ width: "94%" }}></div>
-                  </div>
-                </div>
-                <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
                   DONATE NOW
                 </Button>
               </div>

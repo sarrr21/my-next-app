@@ -1,7 +1,10 @@
 import ContactPage from "@/components/Contact";
 import Footer from "@/components/footer";
+import FooterSection from "@/components/footer1";
 import Navbar from "@/components/navbar";
-import { Badge } from "lucide-react";
+import TimelineSection from "@/components/timeline";
+import { Badge } from "@/components/ui/badge";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,7 +18,9 @@ export default function AboutPage() {
     <Navbar />
     <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-         
+        <Badge variant="secondary" className="mb-6  bg-orange-600 hover:bg-orange-700 text-sm font-medium">
+            Global Empowerment Foundation
+          </Badge>
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
             Tausi Likokola Global Empowerment Foundation
           </h1>
@@ -48,8 +53,9 @@ export default function AboutPage() {
       </p>
       
     </main>
+    <TimelineSection />
     <ContactPage />
-    <Footer />
+    <FooterSection />
     </>
   );
 }

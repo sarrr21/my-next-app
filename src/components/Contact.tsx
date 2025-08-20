@@ -68,7 +68,8 @@ export default function ContactPage() {
               <div className="bg-orange-100 p-3 rounded-full">
                 <Mail className="w-6 h-6 text-orange-600" />
               </div>
-              <p className="font-semibold text-gray-800">info@mywebsite.com</p>
+              <p className="font-semibold text-gray-800">tausiusa@mail.com
+              </p>
             </div>
           </div>
         </div>

@@ -2,8 +2,9 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowRightIcon } from "lucide-react";
 import { Badge } from "./ui/badge";
+import Link from "next/link";
 
 export default function Programs() {
   return (
@@ -37,6 +38,16 @@ export default function Programs() {
                 Her work has inspired thousands to rise beyond their circumstances through faith, education,
                 empowerment, and compassion.
               </p>
+              <Link href="/about">
+              <button
+      className="flex items-center justify-between border border-orange-500 rounded-full px-6 py-2 text-sm font-medium text-gray-800 hover:bg-orange-50 transition-all"
+    >
+      <span>ABOUT MORE</span>
+      <span className="ml-4 flex items-center justify-center bg-orange-500 text-white rounded-full w-8 h-8">
+        <ArrowRightIcon size={16} />
+      </span>
+    </button>
+    </Link>
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg">
         <Image

@@ -1,11 +1,12 @@
 
 import ContactPage from "@/components/Contact";
 import Footer from "@/components/footer";
+import FooterSection from "@/components/footer1";
 import HelpingHandSection from "@/components/helping-hand-section";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
 import Initiatives from "@/components/seaction";
-import StatsSection from "@/components/stats-section";
+
 
 
 
@@ -17,7 +18,7 @@ export default function HomePage() {
       <Initiatives />
       <HelpingHandSection />
       <ContactPage />
-      <Footer />
+      <FooterSection />
     </main>
   )
 }

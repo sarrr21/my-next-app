@@ -32,7 +32,7 @@ export default function Navbar() {
                 About
               </a>
               <a
-                href="#"
+                href="/program"
                 className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Programs
@@ -43,9 +43,7 @@ export default function Navbar() {
               >
                 Gallery
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
-                Newsletters
-              </a>
+              
               <a
                 href="#"
                 className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
@@ -84,15 +82,13 @@ export default function Navbar() {
               <a href="/about" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 About
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
+              <a href="/program" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Programs
               </a>
               <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Gallery
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
-                Newsletters
-              </a>
+              
               <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Donation
               </a>

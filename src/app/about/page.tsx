@@ -1,21 +1,21 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import Footer from "@/components/footer"
-import Navbar from "@/components/navbar"
-import CausesPage from "@/components/helping-hand-section"
-import ReactPlayer from "react-player";
+import ContactPage from "@/components/Contact";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
+import { Badge } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | TLGEF",
+  description: "Learn more about the Tausi Likokola Global Empowerment Foundation (TLGEF).",
+};
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 px-4">
+    <>
+    <Navbar />
+    <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <Badge variant="secondary" className="mb-6  bg-orange-600 hover:bg-orange-700 text-sm font-medium">
-            Global Empowerment Foundation
-          </Badge>
+         
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
             Tausi Likokola Global Empowerment Foundation
           </h1>
@@ -25,161 +25,31 @@ export default function AboutPage() {
          
         </div>
       </section>
-
-      {/* Mission & Vision */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <img
-                src="/images/image5.png"
-                alt="Tausi Likokola speaking at community event"
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-           
-          </div>
+    <main className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto px-4 py-10 prose">
+    <div className="flex gap-2 ">
+        <h2 className="text-gray-500 ">ABOUT</h2>
+        <div className="border-b w-20 mb-2 border-orange-500" />
         </div>
-      </section>
-
-      {/* Core Programs */}
-     <CausesPage />
-      {/* Founder Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-          </div>
-        </div>
-      </section>
-
-
-      {/* Media Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl font-bold text-foreground mb-4">Our Impact in Action</h2>
-            <p className="text-xl text-muted-foreground font-sans">
-              See how we're making a difference in communities around the world
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-full  bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <ReactPlayer 
-        src="/videos/video1.mp4"   // path from public folder
-        controls={true}          // show play/pause, volume, fullscreen
-        playing={false}          // autoplay if true
-        loop={false}             // repeat video if true
-        width="100%"             // responsive width
-        height="auto"        
-              />
-              </div>
-                 
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-serif font-semibold mb-2">Health Workshops</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                Women participating in reproductive health and hygiene education
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src=""
-                alt="Women's health workshop"
-                className="w-full aspect-video object-cover"
-              />
-              <CardContent className="p-4">
-                <h3 className="font-serif font-semibold mb-2">Legal Advocacy</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                Community legal aid workshops empowering vulnerable populations
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-full h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <ReactPlayer 
-        src="/videos/video2.mp4"   // path from public folder
-        controls={true}          // show play/pause, volume, fullscreen
-        playing={false}          // autoplay if true
-        loop={false}             // repeat video if true
-        width="100%"             // responsive width
-        height="auto"        
-              />
-                  </div>
-                  
-                </div>
-              </div>
-              <CardContent className="p-4 mt-36">
-                <h3 className="font-serif font-semibold mb-2">Education in Tanzania</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                Documenting our scholarship programs and school supply distributions
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src="/african-children-classroom.png"
-                alt="Children in classroom"
-                className="w-full aspect-video object-cover"
-              />
-              <CardContent className="p-4">
-                <h3 className="font-serif font-semibold mb-2">School Supplies Distribution</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                  Providing essential educational materials to underprivileged students
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <img
-                src="/african-women-entrepreneurs-workshop.png"
-                alt="Entrepreneurship workshop"
-                className="w-full aspect-video object-cover"
-              />
-              <CardContent className="p-4">
-                <h3 className="font-serif font-semibold mb-2">Entrepreneurship Training</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                  Empowering women with business skills and leadership development
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-muted-foreground font-sans">Community Impact Video</p>
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-serif font-semibold mb-2">Community Development</h3>
-                <p className="text-sm text-muted-foreground font-sans">
-                  Showcasing sustainable development projects across East Africa
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
+        <p className=" text-3xl font-bold mb-4 mt-4">WHO WE ARE</p>
+      <p>
+        The Tausi Likokola Global Empowerment Foundation (TLGEF) is a nonprofit organization founded by internationally recognized author, former fashion model, entrepreneur, and humanitarian Tausi Likokola. Based in Georgia, United States, with a global mission focused on East Africa and Tanzania, TLGEF is dedicated to empowering vulnerable communities through education, healthcare, legal advocacy, mentorship, and sustainable development initiatives. The foundation works to uplift women and girls by providing sanitary products, mentorship, workshops, and legal resources, while amplifying human rights and social justice.
+      </p>
+      <p>
+        Our vision is a world where every woman, child, and underserved community has access to education, healthcare, legal support, and the tools to rise above poverty and injustice — empowering them to live with dignity and freedom. To achieve this, TLGEF implements core programs in education and literacy advancement, women’s health and sanitation initiatives, legal advocacy, workshops and mentorship, and global partnerships with organizations such as UNICEF, WHO, and USIDHR.
+      </p>
+      <p>
+        TLGEF is structured under a Board of Directors led by Founder & President Tausi Likokola, Vice President Dr. Jackson Munuo, Secretary Neema Newton, and Treasurer Attorney James Harris. The foundation is in the process of completing its legal registration as a Georgia Nonprofit Corporation, filing for 501(c)(3) federal tax-exempt status, and obtaining an EIN.
+      </p>
+      <p>
+        Our work directly supports the United Nations Sustainable Development Goals (SDGs), including ending poverty, promoting good health, advancing quality education, achieving gender equality, reducing inequalities, strengthening justice, and building partnerships for sustainable development.
+      </p>
+      <p>
+        With a strong foundation of humanitarian service, Tausi Likokola brings years of experience as a human rights advocate and mentor, having co-founded The Tausi AIDS Fund (TAF) and contributed to numerous international charitable causes. Through TLGEF, she continues her lifelong commitment to empowering women, children, and underserved communities across Africa, the United States, and beyond.
+      </p>
       
-      <Footer />
-    </div>
-  )
+    </main>
+    <ContactPage />
+    <Footer />
+    </>
+  );
 }

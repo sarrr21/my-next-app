@@ -31,8 +31,8 @@ export default function ContactPage() {
   return (
     <div className="py-20 px-6 max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto ">
        <div className="flex gap-2 ">
-        <h2 className="text-gray-500 mb-6">CONTACT US</h2>
-        <div className="border-b w-20 mb-8 border-orange-500" />
+        <h2 className="text-gray-500 mb-8">CONTACT US</h2>
+        <div className="border-b w-20 mb-10 border-orange-500" />
         </div>
         <p className=" text-3xl font-bold mb-12">GET IN TOUCH</p>
       

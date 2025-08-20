@@ -10,36 +10,36 @@ export default function Footer() {
           {/* Logo and Description */}
           <div className="lg:col-span-1">
            <img src="/images/Logo1.PNG" className="w-8 h-8"/>
-            <h3 className="text-2xl font-bold mb-4 mt-2">Unity multiplies impact.</h3>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <h3 className="text-2xl font-serif font-bold mb-4 mt-2">Unity multiplies impact.</h3>
+            <p className="text-gray-400 mb-6 leading-relaxed font-sans">
             A world where every woman, child, and underserved community has access to education, healthcare, legal support,
              and the tools to rise above poverty and injustice — empowering them to live with dignity & freedom
 
             </p>
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full">CONTACT US</Button>
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full font-sans font-semibold">CONTACT US</Button>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Services</h4>
+            <h4 className="text-lg font-serif font-semibold mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                   Supporting Families
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                 Global Awareness 
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                   Academics Program
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                 Human Rights Protection
 
                 </a>
@@ -49,20 +49,20 @@ export default function Footer() {
 
           {/* Useful Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Useful Links</h4>
+            <h4 className="text-lg font-serif font-semibold mb-6">Useful Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                   OUr Program
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+                <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors font-sans">
                   Gallery
                 </a>
               </li>
@@ -71,15 +71,15 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Info</h4>
+            <h4 className="text-lg font-serif font-semibold mb-6">Contact Info</h4>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-orange-500" />
-                <span className="text-gray-400">+251 901099926</span>
+                <span className="text-gray-400 font-sans">+251 901099926</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="text-orange-500" />
-                <span className="text-gray-400">+251 994265067</span>
+                <span className="text-gray-400 font-sans">+251 994265067</span>
               </div>
             </div>
 

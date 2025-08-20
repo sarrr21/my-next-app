@@ -19,7 +19,7 @@ export default function AboutPage() {
           <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
             Tausi Likokola Global Empowerment Foundation
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed font-sans">
             "Alone, one can only do so much — but together, we can do so much more." Unity multiplies impact.
           </p>
          
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl font-bold text-foreground mb-4">Our Impact in Action</h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground font-sans">
               See how we're making a difference in communities around the world
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function AboutPage() {
               </div>
               <CardContent className="p-4">
                 <h3 className="font-serif font-semibold mb-2">Health Workshops</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                 Women participating in reproductive health and hygiene education
                 </p>
               </CardContent>
@@ -97,7 +97,7 @@ export default function AboutPage() {
               />
               <CardContent className="p-4">
                 <h3 className="font-serif font-semibold mb-2">Legal Advocacy</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                 Community legal aid workshops empowering vulnerable populations
                 </p>
               </CardContent>
@@ -121,7 +121,7 @@ export default function AboutPage() {
               </div>
               <CardContent className="p-4 mt-36">
                 <h3 className="font-serif font-semibold mb-2">Education in Tanzania</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                 Documenting our scholarship programs and school supply distributions
                 </p>
               </CardContent>
@@ -135,7 +135,7 @@ export default function AboutPage() {
               />
               <CardContent className="p-4">
                 <h3 className="font-serif font-semibold mb-2">School Supplies Distribution</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                   Providing essential educational materials to underprivileged students
                 </p>
               </CardContent>
@@ -149,7 +149,7 @@ export default function AboutPage() {
               />
               <CardContent className="p-4">
                 <h3 className="font-serif font-semibold mb-2">Entrepreneurship Training</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                   Empowering women with business skills and leadership development
                 </p>
               </CardContent>
@@ -163,12 +163,12 @@ export default function AboutPage() {
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
-                  <p className="text-sm text-muted-foreground">Community Impact Video</p>
+                  <p className="text-sm text-muted-foreground font-sans">Community Impact Video</p>
                 </div>
               </div>
               <CardContent className="p-4">
                 <h3 className="font-serif font-semibold mb-2">Community Development</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground font-sans">
                   Showcasing sustainable development projects across East Africa
                 </p>
               </CardContent>

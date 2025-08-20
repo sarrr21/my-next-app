@@ -21,40 +21,40 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <a
                 href="/"
-                className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Home
               </a>
               <a
                 href="/about"
-                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 About
               </a>
               <a
                 href="#"
-                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Programs
               </a>
               <a
                 href="#"
-                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Gallery
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Newsletters
               </a>
               <a
                 href="#"
-                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Donation
               </a>
               <a
                 href="#"
-                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Contact Us
               </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
 
           {/* Donate Button */}
           <div className="hidden md:block">
-            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full">DONATE NOW</Button>
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full font-sans font-semibold">DONATE NOW</Button>
           </div>
 
           {/* Mobile menu button */}
@@ -78,29 +78,29 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-              <a href="/" className="text-gray-900 block px-3 py-2 text-base font-medium">
+              <a href="/" className="text-gray-900 block px-3 py-2 text-base font-sans font-medium">
                 Home
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 About
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Programs
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Gallery
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Newsletters
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Donation
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-medium">
+              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Contact Us
               </a>
               <div className="px-3 py-2">
-                <Button className="bg-orange-600 hover:bg-orange-700 text-white w-full rounded-full">DONATE NOW</Button>
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white w-full rounded-full font-sans font-semibold">DONATE NOW</Button>
               </div>
             </div>
           </div>

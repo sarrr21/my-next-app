@@ -9,13 +9,13 @@ export default function Programs() {
   return (
     <div className="">
 
-    <section className="px-4 sm:px-6 lg:px-12 py-12 space-y-10 max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
-    <div className="flex gap-2 ">
-        <h2 className="text-gray-500">ABOUT</h2>
+    <section className="px-4 py-12 space-y-10 max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto">
+      {/* Economic Cooperation */}
+      <div className="flex gap-2 ">
+        <h2 className="text-gray-500 ">ABOUT</h2>
         <div className="border-b w-20 mb-2 border-orange-500" />
         </div>
         <p className=" text-3xl font-bold">WHO WE ARE</p>
-      {/* Economic Cooperation */}
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Text */}
         <div className="space-y-6">

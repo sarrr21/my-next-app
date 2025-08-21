@@ -5,6 +5,12 @@ import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
 
 import FooterSection from "@/components/footer1"
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Program | TLGEF",
+  description: "Learn more about the Tausi Likokola Global Empowerment Foundation (TLGEF).",
+};
 
 export default function Program() {
   return (

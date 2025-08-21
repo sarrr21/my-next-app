@@ -37,14 +37,12 @@ export default function AboutPage() {
         </div>
         <p className=" text-3xl font-bold mb-4 mt-4">WHO WE ARE</p>
       <p>
-        The Tausi Likokola Global Empowerment Foundation (TLGEF) is a nonprofit organization founded by internationally recognized author, former fashion model, entrepreneur, and humanitarian Tausi Likokola. Based in Georgia, United States, with a global mission focused on East Africa and Tanzania, TLGEF is dedicated to empowering vulnerable communities through education, healthcare, legal advocacy, mentorship, and sustainable development initiatives. The foundation works to uplift women and girls by providing sanitary products, mentorship, workshops, and legal resources, while amplifying human rights and social justice.
+        The Tausi Likokola Global Empowerment Foundation (TLGEF) is a nonprofit organization founded by internationally recognized author, former fashion model, entrepreneur, and humanitarian Tausi Likokola. Based in Georgia, United States, with a global mission focused on USA and Africa especially East Africa and Tanzania, TLGEF is dedicated to empowering vulnerable communities through education, healthcare, legal advocacy, mentorship, and sustainable development initiatives. The foundation works to uplift women and girls by providing sanitary products, mentorship, workshops, and legal resources, while amplifying human rights and social justice.
       </p>
       <p>
         Our vision is a world where every woman, child, and underserved community has access to education, healthcare, legal support, and the tools to rise above poverty and injustice — empowering them to live with dignity and freedom. To achieve this, TLGEF implements core programs in education and literacy advancement, women’s health and sanitation initiatives, legal advocacy, workshops and mentorship, and global partnerships with organizations such as UNICEF, WHO, and USIDHR.
       </p>
-      <p>
-        TLGEF is structured under a Board of Directors led by Founder & President Tausi Likokola, Vice President Dr. Jackson Munuo, Secretary Neema Newton, and Treasurer Attorney James Harris. The foundation is in the process of completing its legal registration as a Georgia Nonprofit Corporation, filing for 501(c)(3) federal tax-exempt status, and obtaining an EIN.
-      </p>
+     
       <p>
         Our work directly supports the United Nations Sustainable Development Goals (SDGs), including ending poverty, promoting good health, advancing quality education, achieving gender equality, reducing inequalities, strengthening justice, and building partnerships for sustainable development.
       </p>

@@ -91,7 +91,7 @@ export default function Programs() {
               <div>
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Mission</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  To empower vulnerable communities globally, especially in Tanzania and East Africa, through education,
+                  To empower vulnerable communities globally, USA and Africa especially in Tanzania and East Africa, through education,
                   healthcare access, legal advocacy, and sustainable development. We seek to uplift women and girls by
                   providing sanitary products, mentorship, workshops, and legal resources while amplifying human rights
                   and social justice.

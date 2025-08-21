@@ -5,6 +5,7 @@ import FooterSection from "@/components/footer1";
 import HelpingHandSection from "@/components/helping-hand-section";
 import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
+import Partners from "@/components/Partner";
 import Initiatives from "@/components/seaction";
 
 
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSection />
       <Initiatives />
       <HelpingHandSection />
+      <Partners />
       <ContactPage />
       <FooterSection />
     </main>

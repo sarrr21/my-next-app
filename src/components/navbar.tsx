@@ -38,7 +38,7 @@ export default function Navbar() {
                 Programs
               </a>
               <a
-                href="#"
+                href="/gallery"
                 className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-sans font-medium transition-colors"
               >
                 Gallery
@@ -85,7 +85,7 @@ export default function Navbar() {
               <a href="/program" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Programs
               </a>
-              <a href="#" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
+              <a href="/gallery" className="text-gray-700 hover:text-orange-600 block px-3 py-2 text-base font-sans font-medium">
                 Gallery
               </a>
               

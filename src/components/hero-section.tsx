@@ -160,7 +160,7 @@ export default function HeroSection() {
         </div>
         
         {/* Text content at bottom */}
-        <div className="bg-white/95 backdrop-blur-sm p-6 space-y-4">
+        <div className="bg-white/95 backdrop-blur-sm p-3 space-y-2 ">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
             <span className="block mb-2">{currentSlideData.title}</span>
             <span className="block text-gradient">{currentSlideData.subtitle}</span>

@@ -2,6 +2,9 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Navbar from "@/components/navbar";
+import FooterSection from "@/components/footer1";
+import { Badge } from "@/components/ui/badge";
 
 interface FormData {
   name: string;
@@ -29,6 +32,23 @@ export default function ContactPage() {
   };
 
   return (
+    <>
+    <Navbar />
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <Badge variant="secondary" className="mb-6  bg-orange-600 hover:bg-orange-700 text-sm font-medium">
+            Global Empowerment Foundation
+          </Badge>
+          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6">
+            Tausi Likokola Global Empowerment Foundation
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed font-sans">
+            "Alone, one can only do so much — but together, we can do so much more." Unity multiplies impact.
+          </p>
+         
+        </div>
+      </section>
     <div className="py-20 px-6 max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto ">
        <div className="flex gap-2 ">
         <h2 className="text-gray-500 mb-8">CONTACT US</h2>
@@ -128,5 +148,7 @@ export default function ContactPage() {
         </form>
       </div>
     </div>
+    <FooterSection />
+    </>
   );
 }

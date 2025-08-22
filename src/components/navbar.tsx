@@ -58,7 +58,7 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-300 group-hover:w-full"></span>
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-semibold transition-all duration-300 relative group"
               >
                 Contact Us
@@ -121,7 +121,7 @@ export default function Navbar() {
                 Donation
               </a>
               <a 
-                href="#" 
+                href="/contact" 
                 className="text-gray-700 hover:text-orange-600 block px-3 py-3 text-base font-semibold transition-colors duration-300 rounded-lg hover:bg-gray-50"
               >
                 Contact Us

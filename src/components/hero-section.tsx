@@ -121,9 +121,11 @@ export default function HeroSection() {
                   textVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
               >
+                <Link href="/contact">
                 <button className="btn-primary text-lg px-8 py-4">
                   Join Our Mission
                 </button>
+                </Link>
               </div>
             </div>
 

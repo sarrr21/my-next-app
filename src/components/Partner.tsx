@@ -49,7 +49,7 @@ export default function Partners() {
               className="card-modern group cursor-pointer border-0 bg-white/80 backdrop-blur-sm"
             >
               <CardContent className="p-6 flex items-center justify-center text-center min-h-[120px]">
-                <p className="text-gray-700 font-medium text-base leading-relaxed group-hover:text-white transition-all duration-300 ease-out">
+                <p className="text-gray-700 font-medium text-lg leading-relaxed group-hover:text-white transition-all duration-300 ease-out ">
                   {partner}
                 </p>
               </CardContent>

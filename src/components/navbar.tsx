@@ -51,7 +51,7 @@ export default function Navbar() {
               </a>
               
               <a
-                href="#"
+                href="donate"
                 className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-semibold transition-all duration-300 relative group"
               >
                 Donation
@@ -69,9 +69,11 @@ export default function Navbar() {
 
           {/* Donate Button */}
           <div className="hidden md:block">
+            <Link href="/donate">
             <Button className="btn-primary text-sm px-6 py-2.5">
               DONATE NOW
             </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -115,7 +117,7 @@ export default function Navbar() {
               </a>
               
               <a 
-                href="#" 
+                href="/donate" 
                 className="text-gray-700 hover:text-orange-600 block px-3 py-3 text-base font-semibold transition-colors duration-300 rounded-lg hover:bg-gray-50"
               >
                 Donation
@@ -127,9 +129,11 @@ export default function Navbar() {
                 Contact Us
               </a>
               <div className="px-3 py-3">
+                <Link href="/donate">
                 <Button className="btn-primary text-sm w-full">
                   DONATE NOW
                 </Button>
+                </Link>
               </div>
             </div>
           </div>

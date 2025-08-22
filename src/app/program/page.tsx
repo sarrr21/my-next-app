@@ -135,6 +135,88 @@ export default function Program() {
                 </Button>
               </div>
             </div>
+              
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
+                <img
+                  src="/images/image16.jpg"
+                  alt="Entrepreneurship workshop"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Global Awareness & Partnerships
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                Collaboration with global organizations (UNICEF, WHO, USIDHR, etc.) and Community development projects both in the USA, Africa.
+
+                </p>
+                
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+                  DONATE NOW
+                </Button>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
+                <img
+                  src="/images/image5.png"
+                  alt="Entrepreneurship workshop"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight"> No Poverty</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                Our empowerment initiatives support vulnerable populations through education, legal aid, and economic empowerment programs.
+
+                </p>
+                
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+                  DONATE NOW
+                </Button>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
+                <img
+                  src="/images/image14.jpg"
+                  alt="Entrepreneurship workshop"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Good Health and Well-being</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                We improve community health by providing reproductive health education, sanitary products, and support for local health programs.
+
+                </p>
+                
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+                  DONATE NOW
+                </Button>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
+              <div className="relative h-40 sm:h-48 overflow-hidden">
+                <img
+                  src="/images/image13.jpg"
+                  alt="Entrepreneurship workshop"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </div>
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Gender Equality</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                TLGEF is deeply committed to empowering women and girls by providing mentorship, leadership development, and advocating for their rights.
+
+                </p>
+                
+                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
+                  DONATE NOW
+                </Button>
+              </div>
+            </div>
           </div>
 
           

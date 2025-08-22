@@ -1,16 +1,15 @@
-"use client";
-
+"use client"
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Navbar from "@/components/navbar";
 import FooterSection from "@/components/footer1";
 import { Badge } from "@/components/ui/badge";
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Contact Us | TLGEF",
-  description: "Learn more about the Tausi Likokola Global Empowerment Foundation (TLGEF).",
-};
+// export const metadata: Metadata = {
+//   title: "Contact Us | TLGEF",
+//   description: "Learn more about the Tausi Likokola Global Empowerment Foundation (TLGEF).",
+// };
 
 interface FormData {
   name: string;

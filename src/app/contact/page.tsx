@@ -89,13 +89,13 @@ export default function ContactPage() {
               <p className="font-semibold text-gray-800">770-744-4419</p>
             </div>
 
-            <div className="flex items-center space-x-4">
+            {/* <div className="flex items-center space-x-4">
               <div className="bg-orange-100 p-3 rounded-full">
                 <Mail className="w-6 h-6 text-orange-600" />
               </div>
               <p className="font-semibold text-gray-800">test@gmail.com
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 

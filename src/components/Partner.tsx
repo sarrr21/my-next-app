@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 
 const partners: string[] = [
-  "UNICEF The International Tourist Fair",
+ 
   "The SADEC Business Summit",
-  "KICC Women's Conference {Azusa Ministries}",
+  
   "The TAF Charity Fund Raiser",
   "The Ludwigshafen Museum",
   "The African Heritage Banquet",
@@ -18,9 +18,9 @@ const partners: string[] = [
   "United Nations",
   "Pleasure Ridge Park High School",
   "The Iroquois Public Library",
-  "The Gallery Bernard Knuss",
-  "The Ms. Black Germany Pageant",
-  "The Embassy of Tanzania",
+  
+  
+
 ];
 
 export default function Partners() {

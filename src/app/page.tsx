@@ -7,6 +7,7 @@ import HeroSection from "@/components/hero-section";
 import Navbar from "@/components/navbar";
 import Partners from "@/components/Partner";
 import Initiatives from "@/components/seaction";
+import TestimonialsSection from "@/components/testimonial";
 
 
 
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Initiatives />
       <HelpingHandSection />
       <Partners />
+      <TestimonialsSection />
       <ContactPage />
       <FooterSection />
     </main>

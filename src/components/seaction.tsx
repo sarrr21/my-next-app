@@ -79,8 +79,9 @@ export default function Programs() {
         {/* Text */}
         <div className="space-y-8">
               <div>
-                <h1 className="font-serif text-6xl font-bold text-foreground mb-4">Caring Hearts, <br/>
-                Sharing Hands</h1>
+                <h1 className="font-serif text-6xl font-bold text-foreground mb-6">Caring Hearts, <br/>
+
+                <span className="text-orange-600">Sharing Hands</span></h1>
                 <h2 className="font-serif text-3xl font-bold text-foreground mb-4">Our Vision</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   A world where every woman, child, and underserved community has access to education, healthcare, legal

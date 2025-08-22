@@ -19,12 +19,12 @@ export default function Gallery() {
       className: "row-span-3",
     },
     {
-      src: "/images/image2.png",
+      src: "/images/image10.jpg",
       alt: "Ferris wheel",
       className: "row-span-2",
     },
     {
-      src: "/images/image3.png",
+      src: "/images/image14.jpg",
       alt: "Beach sunset",
       className: "row-span-2",
     },
@@ -34,7 +34,7 @@ export default function Gallery() {
       className: "row-span-2",
     },
     {
-      src: "/images/image5.png",
+      src: "/images/image12.jpg",
       alt: "Modern stairs",
       className: "row-span-2",
     },
@@ -59,17 +59,17 @@ export default function Gallery() {
       className: "row-span-1",
     },
     {
-      src: "/images/image10.jpg",
+      src: "/images/image5.png",
       alt: "Greek architecture",
       className: "row-span-2",
     },
     {
-      src: "/placeholder-u1o8y.png",
+      src: "/images/image2.png",
       alt: "Modern stairs",
       className: "row-span-2",
     },
     {
-      src: "/botanical-drinks-flowers.png",
+      src: "/images/image3.png",
       alt: "Botanical drinks",
       className: "row-span-1",
     },

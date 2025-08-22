@@ -128,5 +128,85 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Professional Typography Enhancements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold tracking-tight;
+    line-height: 1.2;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    letter-spacing: -0.02em;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    letter-spacing: -0.015em;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+    letter-spacing: -0.01em;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p {
+    @apply leading-relaxed;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+  
+  /* Modern Card Styles */
+  .card-modern {
+    @apply bg-white rounded-2xl shadow-lg border border-gray-100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-modern:hover {
+    @apply shadow-xl transform -translate-y-1;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Professional Button Styles */
+  .btn-primary {
+    @apply bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px 0 rgba(251, 146, 60, 0.3);
+  }
+  
+  .btn-primary:hover {
+    @apply transform -translate-y-0.5;
+    box-shadow: 0 8px 25px 0 rgba(251, 146, 60, 0.4);
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Professional Section Spacing */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  /* Modern Gradient Overlays */
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.1) 100%);
+  }
+  
+  /* Professional Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

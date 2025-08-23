@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      videoSrc: "/videos/vd1.mp4",
+      videoSrc: "/videos/vd2.mp4",
       profileImage: "/professional-woman-headshot.png",
       name: "Emily Manekshaw",
       title: "COO, Prime Inc.",

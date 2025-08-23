@@ -59,17 +59,16 @@ export default function TestimonialsSection() {
             <div key={testimonial.id} className="group">
               {/* Video Card */}
               <div className="relative rounded-2xl overflow-hidden w-full shadow-2xl  ">
-                <ReactPlayer
-                  src={testimonial.videoSrc} // ✅ correct prop
-                  width="100%"
-                  height="100%"
-                  controls
-                  playing={false}
-                  style={{ aspectRatio: "3 / 4" }} // ✅ corrected ratio
-                  className="rounded-2xl"
-                />
-                {/* Overlay on hover */}
-               
+              <div className="relative w-full pb-[133%]"> {/* 4:3 ratio => 3/4 = 0.75 => 75% */}
+  <ReactPlayer
+    src={testimonial.videoSrc}
+    width="100%"
+    height="100%"
+    controls
+    playing={false}
+    className="absolute top-0 left-0 rounded-2xl"
+  />
+</div>
               </div>
 
               

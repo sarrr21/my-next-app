@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import ReactPlayer from "react-player";
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -54,24 +53,25 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="group">
               {/* Video Card */}
-              <div className="relative rounded-2xl overflow-hidden w-full shadow-2xl  ">
-              <div className="relative w-full pb-[133%]"> {/* 4:3 ratio => 3/4 = 0.75 => 75% */}
-  <ReactPlayer
-    src={testimonial.videoSrc}
-    width="100%"
-    height="100%"
-    controls
-    playing={false}
-    className="absolute top-0 left-0 rounded-2xl"
-  />
-</div>
+              <div className="relative rounded-2xl overflow-hidden w-full shadow-2xl bg-black">
+                <video
+                  src={testimonial.videoSrc}
+                  controls
+                  preload="metadata"
+                  poster=""
+                  className="w-full h-auto rounded-2xl"
+                  playsInline
+                  muted
+                  style={{ aspectRatio: '4/3' }}
+                >
+                  <source src={testimonial.videoSrc} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
-
-              
             </div>
           ))}
         </div>

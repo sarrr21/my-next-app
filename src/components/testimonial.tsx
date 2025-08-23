@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 4,
-      videoSrc: "/videos/video4.mp4",
+      videoSrc: "/videos/vd3.mp4",
       profileImage: "/man-headshot.png",
       name: "Heath Badger",
       title: "CEO, Insinious Inc.",

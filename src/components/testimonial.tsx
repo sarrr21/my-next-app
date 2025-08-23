@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      videoSrc: "/videos/vd2.mp4",
+      videoSrc: "/videos/vd6.mp4",
       profileImage: "/professional-woman-headshot.png",
       name: "Emily Manekshaw",
       title: "COO, Prime Inc.",
@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
     },
     {
       id: 4,
-      videoSrc: "/videos/vd3.mp4",
+      videoSrc: "/videos/vd7.mp4",
       profileImage: "/man-headshot.png",
       name: "Heath Badger",
       title: "CEO, Insinious Inc.",

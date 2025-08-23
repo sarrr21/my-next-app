@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 
 export default function TestimonialsSection() {
   const testimonials = [
@@ -33,6 +36,18 @@ export default function TestimonialsSection() {
     },
   ];
 
+  const [videoErrors, setVideoErrors] = useState<{ [key: number]: boolean }>(
+    {}
+  );
+
+  const handleVideoError = (testimonialId: number) => {
+    setVideoErrors((prev) => ({ ...prev, [testimonialId]: true }));
+  };
+
+  const handleVideoLoad = (testimonialId: number) => {
+    setVideoErrors((prev) => ({ ...prev, [testimonialId]: false }));
+  };
+
   return (
     <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto px-6">
@@ -48,7 +63,8 @@ export default function TestimonialsSection() {
             What People <span className="text-gradient">Say</span>
           </h3>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Together, we hold the power to reshape the world, one compassionate act at a time.
+            Together, we hold the power to reshape the world, one compassionate
+            act at a time.
           </p>
         </div>
 
@@ -58,19 +74,61 @@ export default function TestimonialsSection() {
             <div key={testimonial.id} className="group">
               {/* Video Card */}
               <div className="relative rounded-2xl overflow-hidden w-full shadow-2xl bg-black">
-                <video
-                  src={testimonial.videoSrc}
-                  controls
-                  preload="metadata"
-                  poster=""
-                  className="w-full h-auto rounded-2xl"
-                  playsInline
-                  muted
-                  style={{ aspectRatio: '4/3' }}
-                >
-                  <source src={testimonial.videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                {videoErrors[testimonial.id] ? (
+                  // Fallback when video fails to load
+                  <div className="flex items-center justify-center h-full min-h-[200px] text-white text-center p-4 bg-gray-800 rounded-2xl">
+                    <div>
+                      <div className="w-16 h-16 mx-auto mb-4 bg-orange-500 rounded-full flex items-center justify-center">
+                        <svg
+                          className="w-8 h-8"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      </div>
+                      <p className="text-sm mb-2 font-medium">
+                        Video Unavailable
+                      </p>
+                      <p className="text-xs text-gray-400 mb-1">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-xs text-gray-400">
+                        {testimonial.title}
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <video
+                    controls
+                    preload="metadata"
+                    className="w-full h-auto rounded-2xl"
+                    playsInline
+                    muted
+                    style={{ aspectRatio: "4/3" }}
+                    onError={() => handleVideoError(testimonial.id)}
+                    onLoadedData={() => handleVideoLoad(testimonial.id)}
+                    onCanPlay={() => handleVideoLoad(testimonial.id)}
+                  >
+                    <source src={testimonial.videoSrc} type="video/mp4" />
+                    <source
+                      src={testimonial.videoSrc.replace(".mp4", ".webm")}
+                      type="video/webm"
+                    />
+                    <source
+                      src={testimonial.videoSrc.replace(".mp4", ".ogg")}
+                      type="video/ogg"
+                    />
+                    <track kind="captions" src="" label="English" />
+                    <p className="text-white text-center p-4">
+                      Your browser does not support the video tag.
+                    </p>
+                  </video>
+                )}
               </div>
             </div>
           ))}
@@ -82,7 +140,7 @@ export default function TestimonialsSection() {
             Ready to share your story?
           </p>
           <Link href="/contact">
-          <button className="btn-primary">Share Your Experience</button>
+            <button className="btn-primary">Share Your Experience</button>
           </Link>
         </div>
       </div>

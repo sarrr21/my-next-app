@@ -109,7 +109,7 @@ export default function TestimonialsSection() {
                     className="w-full h-auto rounded-2xl"
                     playsInline
                     muted
-                    style={{ aspectRatio: "4/3" }}
+                    style={{ aspectRatio: "3/4" }}
                     onError={() => handleVideoError(testimonial.id)}
                     onLoadedData={() => handleVideoLoad(testimonial.id)}
                     onCanPlay={() => handleVideoLoad(testimonial.id)}

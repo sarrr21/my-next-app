@@ -2,6 +2,7 @@
 
 import { useState, ChangeEvent, FormEvent } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { toast } from "sonner";
 
 interface FormData {
   name: string;
@@ -15,6 +16,7 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -22,11 +24,31 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    // API call here
-  };
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.ok) {
+        toast.success("Message sent successfully ✅");
+        setForm({ name: "", email: "", message: "" }); // clear form
+      } else {
+        toast.error(data.error || "Error sending message ❌");
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again ❌");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="py-20 px-6 max-w-4xl lg:max-w-6xl xl:max-w-full 2xl:max-w-screen-2xl mx-auto ">
@@ -64,13 +86,13 @@ export default function ContactPage() {
               <p className="font-semibold text-gray-800">770-744-4419</p>
             </div>
 
-            {/* <div className="flex items-center space-x-4">
+             <div className="flex items-center space-x-4">
               <div className="bg-orange-100 p-3 rounded-full">
                 <Mail className="w-6 h-6 text-orange-600" />
               </div>
-              <p className="font-semibold text-gray-800">test@gmail.com
+              <p className="font-semibold text-gray-800">info@tausilikokolaglobalempowermentfoundation.org
               </p>
-            </div> */}
+            </div> 
           </div>
         </div>
 

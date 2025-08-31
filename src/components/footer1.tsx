@@ -95,7 +95,7 @@ export default function FooterSection() {
             </div>
           </div>
 
-       {/* Newsletter */}
+    
        <iframe
   src="https://TLGEF.substack.com/embed?background=transparent&hideFooter=true"
   className="w-full h-64 border border-gray-300 rounded-lg bg-transparent"

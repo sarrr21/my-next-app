@@ -37,6 +37,7 @@ function DonationSuccessContent() {
   const payerId = searchParams.get('PayerID');
 
   useEffect(() => {
+    // Get form data from sessionStorage
     const storedFormData = sessionStorage.getItem('donationFormData');
     if (storedFormData) {
       try {
@@ -45,7 +46,7 @@ function DonationSuccessContent() {
         console.error('Failed to parse stored form data:', error);
       }
     }
-  }, []);
+  }, []); // Only run once on mount
 
   useEffect(() => {
     const captureOrder = async () => {
@@ -62,13 +63,18 @@ function DonationSuccessContent() {
 
         const response = await fetch('/api/paypal/capture-order', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify({ orderId: token }),
         });
 
         const data = await response.json();
 
         if (response.ok && data.success) {
+          // Debug: Log the response data
+          console.log('Donation capture response:', data);
+          
           setDonationDetails({
             transactionId: data.transactionId || 'N/A',
             amount: data.amount || '0',
@@ -82,12 +88,15 @@ function DonationSuccessContent() {
             description: `Thank you for your generous donation of $${data.amount || '0'}`,
           });
 
+          // Send notification email to charity owners
           const currentFormData = formData || JSON.parse(sessionStorage.getItem('donationFormData') || '{}');
           if (currentFormData && currentFormData.fullName) {
             try {
               await fetch('/api/contact', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                  'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({
                   type: 'donation',
                   name: currentFormData.fullName,
@@ -99,11 +108,14 @@ function DonationSuccessContent() {
                   phone: currentFormData.phoneNumber,
                 }),
               });
+              console.log('Donation notification email sent successfully');
             } catch (emailError) {
               console.error('Failed to send notification email:', emailError);
+              // Don't fail the donation if email fails
             }
           }
 
+          // Clear the stored form data
           sessionStorage.removeItem('donationFormData');
         } else {
           throw new Error(data.error || 'Failed to process donation');
@@ -124,7 +136,7 @@ function DonationSuccessContent() {
     };
 
     captureOrder();
-  }, [token]);
+  }, [token]); // Only depend on token, not formData
 
   const handleReturnHome = () => {
     router.push('/');
@@ -138,21 +150,25 @@ function DonationSuccessContent() {
     return (
       <div>
         <Navbar />
+        
         <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-12">
           <div className="max-w-2xl mx-auto px-4">
             <Card className="border-0 shadow-2xl">
               <CardContent className="p-8 text-center">
-                <Loader2 className="h-20 w-20 text-blue-600 animate-spin mx-auto mb-4" />
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                  Processing Your Donation
-                </h1>
-                <p className="text-gray-600 text-lg">
-                  Please wait while we confirm your payment with PayPal...
-                </p>
+                <div className="mb-6">
+                  <Loader2 className="h-20 w-20 text-blue-600 animate-spin mx-auto mb-4" />
+                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    Processing Your Donation
+                  </h1>
+                  <p className="text-gray-600 text-lg">
+                    Please wait while we confirm your payment with PayPal...
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
         </div>
+
         <FooterSection />
       </div>
     );
@@ -162,15 +178,21 @@ function DonationSuccessContent() {
     return (
       <div>
         <Navbar />
+        
         <div className="min-h-screen bg-gradient-to-br from-red-50 to-orange-50 py-12">
           <div className="max-w-2xl mx-auto px-4">
             <Card className="border-0 shadow-2xl">
               <CardContent className="p-8 text-center">
-                <AlertCircle className="h-20 w-20 text-red-600 mx-auto mb-4" />
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                  Donation Processing Failed
-                </h1>
-                <p className="text-gray-600 text-lg">{errorMessage}</p>
+                <div className="mb-6">
+                  <AlertCircle className="h-20 w-20 text-red-600 mx-auto mb-4" />
+                  <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                    Donation Processing Failed
+                  </h1>
+                  <p className="text-gray-600 text-lg">
+                    {errorMessage}
+                  </p>
+                </div>
+
                 <div className="bg-red-50 rounded-lg p-6 mb-6">
                   <h3 className="font-semibold text-gray-900 mb-2">What happened?</h3>
                   <p className="text-gray-600 text-sm">
@@ -178,7 +200,13 @@ function DonationSuccessContent() {
                     issue or a problem with the payment system. No charges have been made.
                   </p>
                 </div>
-                <p className="text-gray-600">Please try again or contact our support team if the problem persists.</p>
+
+                <div className="space-y-4">
+                  <p className="text-gray-600">
+                    Please try again or contact our support team if the problem persists.
+                  </p>
+                </div>
+
                 <div className="mt-8 space-y-3">
                   <Button 
                     onClick={handleMakeAnotherDonation}
@@ -200,6 +228,7 @@ function DonationSuccessContent() {
             </Card>
           </div>
         </div>
+
         <FooterSection />
       </div>
     );
@@ -208,17 +237,21 @@ function DonationSuccessContent() {
   return (
     <div>
       <Navbar />
+      
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-12">
         <div className="max-w-2xl mx-auto px-4">
           <Card className="border-0 shadow-2xl">
             <CardContent className="p-8 text-center">
-              <CheckCircle className="h-20 w-20 text-green-600 mx-auto mb-4" />
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Donation Successful!
-              </h1>
-              <p className="text-gray-600 text-lg">
-                Thank you for your generous contribution
-              </p>
+              <div className="mb-6">
+                <CheckCircle className="h-20 w-20 text-green-600 mx-auto mb-4" />
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                  Donation Successful!
+                </h1>
+                <p className="text-gray-600 text-lg">
+                  Thank you for your generous contribution
+                </p>
+              </div>
+
               {donationDetails && (
                 <div className="bg-green-50 rounded-lg p-6 mb-6">
                   <h3 className="font-semibold text-gray-900 mb-4">Donation Details</h3>
@@ -237,19 +270,27 @@ function DonationSuccessContent() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Donor:</span>
-                      <span className="font-medium">{donationDetails.payerName}</span>
+                      <span className="font-medium">
+                        {donationDetails.payerName}
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Email:</span>
-                      <span className="font-medium">{donationDetails.payerEmail}</span>
+                      <span className="font-medium">
+                        {donationDetails.payerEmail}
+                      </span>
                     </div>
                   </div>
                 </div>
               )}
-              <p className="text-gray-600">
-                Your donation has been successfully processed and will help us continue our mission. 
-                You will receive a confirmation email shortly.
-              </p>
+
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  Your donation has been successfully processed and will help us continue our mission. 
+                  You will receive a confirmation email shortly.
+                </p>
+              </div>
+
               <div className="mt-8 space-y-3">
                 <Button 
                   onClick={handleMakeAnotherDonation}
@@ -267,26 +308,52 @@ function DonationSuccessContent() {
                   Return to Home
                 </Button>
               </div>
+
               <div className="mt-6">
                 <p className="text-sm text-gray-500">
                   Questions about your donation? Contact us at{' '}
-                  <a href="mailto:support@yourcharity.org" className="text-blue-600 hover:underline">
+                  <a 
+                    href="mailto:support@yourcharity.org" 
+                    className="text-blue-600 hover:underline"
+                  >
                     support@yourcharity.org
                   </a>
                 </p>
               </div>
-              {process.env.NODE_ENV === 'development' && (
-                <div className="mt-6 p-4 bg-gray-100 rounded-lg">
-                  <h4 className="font-semibold text-sm mb-2">Debug Info (Development Only)</h4>
-                  <pre className="text-xs text-gray-600 overflow-auto">
-                    {JSON.stringify(donationDetails, null, 2)}
-                  </pre>
-                </div>
-              )}
+
             </CardContent>
           </Card>
         </div>
       </div>
+
+      <FooterSection />
+    </div>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <div>
+      <Navbar />
+      
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 py-12">
+        <div className="max-w-2xl mx-auto px-4">
+          <Card className="border-0 shadow-2xl">
+            <CardContent className="p-8 text-center">
+              <div className="mb-6">
+                <Loader2 className="h-20 w-20 text-blue-600 animate-spin mx-auto mb-4" />
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">
+                  Loading...
+                </h1>
+                <p className="text-gray-600 text-lg">
+                  Please wait while we load your donation details...
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
       <FooterSection />
     </div>
   );
@@ -294,7 +361,7 @@ function DonationSuccessContent() {
 
 export default function DonationSuccessPage() {
   return (
-    <Suspense fallback={<div>Loading donation details...</div>}>
+    <Suspense fallback={<LoadingFallback />}>
       <DonationSuccessContent />
     </Suspense>
   );

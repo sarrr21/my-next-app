@@ -3,28 +3,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { toast } from "sonner";
-
+import { FaPaypal } from "react-icons/fa";
 const DonationForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
     email: "",
     donateAmount: "",
-    firstName: "",
-    lastName: "",
-    cardNumber: "",
-    expiryMonth: "",
-    expiryYear: "",
-    cvv: "",
+    customAmount: "",
     message: "",
   });
 
@@ -32,66 +20,130 @@ const DonationForm = () => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // Expiry handler
-  const handleExpiryChange = (value: string) => {
-    const cleaned = value.replace(/\D/g, "");
-    let month = "";
-    let year = "";
-
-    if (cleaned.length >= 2) {
-      month = cleaned.slice(0, 2);
-      year = cleaned.slice(2, 4);
-    } else {
-      month = cleaned;
-    }
-
-    if (month.length === 2 && (parseInt(month) < 1 || parseInt(month) > 12)) {
-      month = "";
-    }
-
-    setFormData((prev) => ({
-      ...prev,
-      expiryMonth: month,
-      expiryYear: year,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    e.stopPropagation();
 
-    toast.success("Thank you for your donation!", {
-      description: "Your generous contribution will make a difference.",
-    });
+    // Determine the amount
+    let amount = '';
+    if (formData.donateAmount === "custom") {
+      amount = formData.customAmount;
+    } else {
+      amount = formData.donateAmount;
+    }
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      phoneNumber: "",
-      email: "",
-      donateAmount: "",
-      firstName: "",
-      lastName: "",
-      cardNumber: "",
-      expiryMonth: "",
-      expiryYear: "",
-      cvv: "",
-      message: "",
-    });
+    // Validate amount
+    if (!amount || amount.trim() === '') {
+      toast.error("Please select or enter a donation amount.");
+      return;
+    }
+
+    // Validate custom amount if selected
+    if (formData.donateAmount === "custom") {
+      const customAmount = parseFloat(formData.customAmount);
+      if (isNaN(customAmount) || customAmount <= 0) {
+        toast.error("Please enter a valid custom amount (greater than $0).");
+        return;
+      }
+      if (customAmount < 1) {
+        toast.error("Minimum donation amount is $1.");
+        return;
+      }
+    }
+
+    // Validate required fields
+    if (!formData.fullName || formData.fullName.trim() === '') {
+      toast.error("Please enter your full name.");
+      return;
+    }
+
+    if (!formData.email || formData.email.trim() === '') {
+      toast.error("Please enter your email address.");
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    try {
+      toast.loading("Creating PayPal order...", {
+        description: `Processing donation of $${amount}`,
+      });
+
+      // Create PayPal order
+      const response = await fetch('/api/paypal/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: parseFloat(amount),
+          currency: 'USD',
+          donorName: formData.fullName,
+          donorEmail: formData.email,
+          donorPhone: formData.phoneNumber,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('PayPal API error:', errorData);
+        throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      if (data.orderId && data.approvalUrl) {
+        toast.dismiss();
+        toast.success("Redirecting to PayPal...", {
+          description: `Donation amount: $${amount}`,
+        });
+        
+        // Store form data in sessionStorage for use after PayPal redirect
+        sessionStorage.setItem('donationFormData', JSON.stringify({
+          fullName: formData.fullName,
+          phoneNumber: formData.phoneNumber,
+          email: formData.email,
+          message: formData.message,
+          amount: amount
+        }));
+        
+        // Redirect to PayPal for payment
+        window.location.href = data.approvalUrl;
+      } else {
+        throw new Error(data.error || 'Failed to create PayPal order - missing order ID or approval URL');
+      }
+    } catch (error) {
+      toast.dismiss();
+      console.error('PayPal order creation error:', error);
+      toast.error("Failed to process donation", {
+        description: error instanceof Error ? error.message : "Please try again or contact support.",
+      });
+    }
   };
 
   return (
     <Card>
-      <CardContent >
+      <CardContent>
+        
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             {/* Full Name */}
             <div>
-              <label className="block text-sm font-medium mb-2">Full Name</label>
+              <label className="block text-sm font-medium mb-2">
+                Full Name *
+              </label>
               <Input
                 type="text"
                 placeholder="Type your name here"
                 value={formData.fullName}
                 onChange={(e) => handleInputChange("fullName", e.target.value)}
+                required
               />
             </div>
 
@@ -112,114 +164,56 @@ const DonationForm = () => {
 
             {/* Email */}
             <div>
-              <label className="block text-sm font-medium mb-2">E-mail</label>
+              <label className="block text-sm font-medium mb-2">E-mail *</label>
               <Input
                 type="email"
                 placeholder="yourname@example.com"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
+                required
               />
             </div>
 
             {/* Donation Amount */}
             <div>
               <label className="block text-sm font-medium mb-2">
-                Donate Amount
+                Donate Amount *
               </label>
-              <Select
+              <select
                 value={formData.donateAmount}
-                onValueChange={(value) =>
-                  handleInputChange("donateAmount", value)
-                }
+                onChange={(e) => handleInputChange("donateAmount", e.target.value)}
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select amount" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="25">$25</SelectItem>
-                  <SelectItem value="50">$50</SelectItem>
-                  <SelectItem value="100">$100</SelectItem>
-                  <SelectItem value="250">$250</SelectItem>
-                  <SelectItem value="500">$500</SelectItem>
-                  <SelectItem value="custom">Custom Amount</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
+                <option value="">Select donation amount</option>
+                <option value="25">$25</option>
+                <option value="50">$50</option>
+                <option value="100">$100</option>
+                <option value="250">$250</option>
+                <option value="500">$500</option>
+                <option value="custom">Custom Amount</option>
+              </select>
 
-          {/* Credit Card Section */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Credit Card Information</h3>
+              {formData.donateAmount === "custom" && (
+                <div className="mt-2">
+                  <Input
+                    type="number"
+                    placeholder="Enter custom amount (minimum $1)"
+                    min="1"
+                    step="0.01"
+                    value={formData.customAmount}
+                    onChange={(e) => handleInputChange("customAmount", e.target.value)}
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Minimum donation: $1.00
+                  </p>
+                </div>
+              )}
 
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  First Name
-                </label>
-                <Input
-                  type="text"
-                  value={formData.firstName}
-                  onChange={(e) =>
-                    handleInputChange("firstName", e.target.value)
-                  }
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Last Name
-                </label>
-                <Input
-                  type="text"
-                  value={formData.lastName}
-                  onChange={(e) =>
-                    handleInputChange("lastName", e.target.value)
-                  }
-                />
-              </div>
-            </div>
-
-            {/* Card Number */}
-            <div>
-              <label className="block text-sm font-medium mb-2">
-                Card Number
-              </label>
-              <Input
-                type="text"
-                placeholder="1234 5678 9012 3456"
-                value={formData.cardNumber}
-                onChange={(e) =>
-                  handleInputChange("cardNumber", e.target.value)
-                }
-              />
-            </div>
-
-            {/* Expiry + CVV */}
-            <div className="grid grid-cols-3 gap-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">MM/YY</label>
-                <Input
-                  type="text"
-                  placeholder="12/25"
-                  value={
-                    formData.expiryMonth
-                      ? `${formData.expiryMonth}${
-                          formData.expiryYear ? "/" + formData.expiryYear : ""
-                        }`
-                      : ""
-                  }
-                  onChange={(e) => handleExpiryChange(e.target.value)}
-                  maxLength={5}
-                />
-              </div>
-              <div className="col-span-2">
-                <label className="block text-sm font-medium mb-2">CVV</label>
-                <Input
-                  type="text"
-                  placeholder="123"
-                  value={formData.cvv}
-                  onChange={(e) => handleInputChange("cvv", e.target.value)}
-                />
-              </div>
+              {formData.donateAmount && formData.donateAmount !== "custom" && (
+                <p className="text-sm text-green-600 mt-1">
+                  Selected: ${formData.donateAmount}
+                </p>
+              )}
             </div>
           </div>
 
@@ -235,9 +229,16 @@ const DonationForm = () => {
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full bg-orange-500">
-            Submit Donation
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full bg-[#0070BA] hover:bg-[#005EA6] text-white flex items-center justify-center gap-2"
+          >
+            <FaPaypal className="text-xl" />
+            Donate with PayPal
           </Button>
+
+
         </form>
       </CardContent>
     </Card>

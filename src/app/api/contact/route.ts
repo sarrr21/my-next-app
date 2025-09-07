@@ -7,15 +7,29 @@ function renderEmail({
   name,
   email,
   message,
+  type = 'contact',
+  amount,
+  currency,
+  transactionId,
+  phone
 }: {
   name: string;
   email: string;
   message: string;
+  type?: 'contact' | 'donation';
+  amount?: string;
+  currency?: string;
+  transactionId?: string;
+  phone?: string;
 }) {
   const safeMessage = message.replace(/\n/g, "<br>");
-
- 
   
+  // Different headers based on type
+  const headerIcon = type === 'donation' ? '💰' : '📬';
+  const headerText = type === 'donation' ? 'New Donation Received' : 'New Contact Message';
+  const footerText = type === 'donation' 
+    ? 'You are receiving this because someone made a donation through your website.'
+    : 'You are receiving this because someone submitted your website contact form.';
 
 return `<!doctype html>
 <html lang="en" style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;">
@@ -25,7 +39,7 @@ return `<!doctype html>
   <meta name="x-apple-disable-message-reformatting">
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
-  <title>New message from ${name}</title>
+  <title>${type === 'donation' ? `New Donation - $${amount} ${currency}` : `New message from ${name}`}</title>
   <style>
     /* --- Dark mode support for clients that honor it --- */
     @media (prefers-color-scheme: dark) {
@@ -36,6 +50,7 @@ return `<!doctype html>
       .badge { background: #111b24 !important; color: #d9e6f2 !important; border-color: #253445 !important; }
       .button { background: #2563eb !important; color: #ffffff !important; border-color: #1e4ec5 !important; }
       .link { color: #93c5fd !important; }
+      .amount { background: #0f1720 !important; color: #10b981 !important; border-color: #1f2b36 !important; }
     }
     /* --- Mobile tweaks --- */
     @media (max-width: 640px) {
@@ -49,7 +64,7 @@ return `<!doctype html>
 <body class="bg" style="margin:0;padding:0;background:#f5f7fb;">
   <!-- Preheader (hidden) -->
   <div style="display:none;opacity:0;visibility:hidden;overflow:hidden;height:0;width:0;mso-hide:all;">
-    New message from ${name} (${email})
+    ${type === 'donation' ? `New donation of $${amount} ${currency} from ${name}` : `New message from ${name} (${email})`}
   </div>
 
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f5f7fb;">
@@ -64,11 +79,11 @@ return `<!doctype html>
                 <tr>
                   <td align="left" style="font-weight:700;font-size:18px;color:#0f172a;">
                     <span style="display:inline-block;padding:10px 12px;border:1px solid #e5e7eb;border-radius:10px;background:#ffffff;vertical-align:middle;">
-                      📬 New Contact Message
+                      ${headerIcon} ${headerText}
                     </span>
                   </td>
                   <td align="right" class="stack" style="font-size:13px;color:#64748b;">
-                    <span class="muted">Received via contact form</span>
+                    <span class="muted">${type === 'donation' ? 'Donation notification' : 'Received via contact form'}</span>
                   </td>
                 </tr>
               </table>
@@ -80,10 +95,26 @@ return `<!doctype html>
             <td>
               <table role="presentation" class="card" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;border-radius:16px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.06);">
                 
+                ${type === 'donation' ? `
+                <!-- Donation Amount Highlight -->
+                <tr>
+                  <td style="text-align:center;padding-bottom:24px;">
+                    <div class="amount" style="display:inline-block;background:#f0fdf4;border:2px solid #10b981;border-radius:16px;padding:16px 24px;">
+                      <div style="font-size:32px;font-weight:800;color:#10b981;line-height:1;">
+                        $${amount} ${currency}
+                      </div>
+                      <div style="font-size:14px;color:#059669;font-weight:600;margin-top:4px;">
+                        Donation Amount
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                ` : ''}
+
                 <!-- Title + meta -->
                 <tr>
                   <td style="padding-bottom:6px;font-weight:800;font-size:22px;line-height:1.3;color:#0f172a;">
-                    Message from ${name}
+                    ${type === 'donation' ? 'Donor Information' : `Message from ${name}`}
                   </td>
                 </tr>
                 <tr>
@@ -92,6 +123,24 @@ return `<!doctype html>
                     <a class="link" href="mailto:${email}" style="color:#2563eb;">${email}</a>
                   </td>
                 </tr>
+
+                ${type === 'donation' && phone ? `
+                <tr>
+                  <td style="font-size:14px;color:#475569;padding-top:4px;">
+                    <span class="muted" style="color:#64748b;">Phone:</span>
+                    <a class="link" href="tel:${phone}" style="color:#2563eb;">${phone}</a>
+                  </td>
+                </tr>
+                ` : ''}
+
+                ${type === 'donation' && transactionId ? `
+                <tr>
+                  <td style="font-size:14px;color:#475569;padding-top:4px;">
+                    <span class="muted" style="color:#64748b;">Transaction ID:</span>
+                    <span style="font-family:monospace;font-size:12px;color:#6b7280;">${transactionId}</span>
+                  </td>
+                </tr>
+                ` : ''}
 
                 <!-- Divider -->
                 <tr>
@@ -104,7 +153,7 @@ return `<!doctype html>
                   <td style="font-size:16px;line-height:1.7;color:#0f172a;">
                     <!-- Wrap long text nicely and make it readable in clients -->
                     <div style="background:#f8fafc;border:1px solid #e5e7eb;border-radius:12px;padding:16px;word-break:break-word;white-space:pre-wrap;">
-                      ${message}
+                      ${safeMessage}
                     </div>
                   </td>
                 </tr>
@@ -119,7 +168,7 @@ return `<!doctype html>
                           <a href="mailto:${email}" 
                              class="button" 
                              style="display:inline-block;background:#1f2937;border:1px solid #111827;color:#ffffff;font-weight:700;font-size:14px;border-radius:10px;padding:12px 18px;line-height:1;">
-                            Reply to ${name}
+                            ${type === 'donation' ? `Thank ${name}` : `Reply to ${name}`}
                           </a>
                         </td>
                         <td width="10"></td>
@@ -129,7 +178,7 @@ return `<!doctype html>
                         </td>
                         <td width="8"></td>
                         <td>
-                          <span class="badge" style="display:inline-block;font-weight:600;font-size:12px;color:#1f2937;background:#f1f5f9;border:1px solid #e5e7eb;border-radius:999px;padding:8px 12px;line-height:1;">Email: ${email}</span>
+                          <span class="badge" style="display:inline-block;font-weight:600;font-size:12px;color:#1f2937;background:#f1f5f9;border:1px solid #e5e7eb;border-radius:999px;padding:8px 12px;line-height:1;">${type === 'donation' ? `$${amount} ${currency}` : `Email: ${email}`}</span>
                         </td>
                       </tr>
                     </table>
@@ -143,7 +192,7 @@ return `<!doctype html>
           <!-- Footer -->
           <tr>
             <td style="padding-top:14px;text-align:center;font-size:12px;color:#94a3b8;">
-              You are receiving this because someone submitted your website contact form.
+              ${footerText}
             </td>
           </tr>
 
@@ -159,11 +208,20 @@ return `<!doctype html>
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, type = 'contact', amount, currency, transactionId, phone } = await req.json();
 
-    if (!name || !email || !message) {
+    // For contact messages, require name, email, message
+    if (type === 'contact' && (!name || !email || !message)) {
       return NextResponse.json(
-        { ok: false, error: "All fields are required." },
+        { ok: false, error: "All fields are required for contact messages." },
+        { status: 400 }
+      );
+    }
+
+    // For donation notifications, require name, email, amount, transactionId
+    if (type === 'donation' && (!name || !email || !amount || !transactionId)) {
+      return NextResponse.json(
+        { ok: false, error: "Required fields missing for donation notification." },
         { status: 400 }
       );
     }
@@ -178,13 +236,21 @@ export async function POST(req: Request) {
       },
     });
 
+    const subject = type === 'donation' 
+      ? `💰 New Donation: $${amount} ${currency} from ${name}`
+      : `New message from ${name}`;
+
+    const textContent = type === 'donation'
+      ? `New donation received!\n\nDonor: ${name} (${email})\nAmount: $${amount} ${currency}\nTransaction ID: ${transactionId}\nMessage: ${message || 'No message'}`
+      : `From: ${name} <${email}>\n\n${message}`;
+
     const info = await transporter.sendMail({
-      from: `"${name}" <${process.env.CONTACT_FROM || process.env.SMTP_USER}>`,
+      from: `"${type === 'donation' ? 'Donation System' : name}" <${process.env.CONTACT_FROM || process.env.SMTP_USER}>`,
       to: process.env.CONTACT_TO || process.env.SMTP_USER,
       replyTo: `${name} <${email}>`,
-      subject: `New message from ${name}`,
-      text: `From: ${name} <${email}>\n\n${message}`, // plain-text fallback
-      html: renderEmail({ name, email, message }), // modern HTML template
+      subject,
+      text: textContent,
+      html: renderEmail({ name, email, message, type, amount, currency, transactionId, phone }),
     });
 
     return NextResponse.json({ ok: true, id: info.messageId });

@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CausesPage() {
   return (
@@ -15,7 +15,8 @@ export default function CausesPage() {
               Our Latest Causes
             </h2>
             <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto px-4">
-              Together, we hold the power to reshape the world, one compassionate act at a time.
+              Together, we hold the power to reshape the world, one
+              compassionate act at a time.
             </p>
           </div>
 
@@ -34,13 +35,16 @@ export default function CausesPage() {
                   Education & Literacy Advancement
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Support our mission to provide scholarship programs for underprivileged children and distribute
-                  educational resources...
+                  Support our mission to provide scholarship programs for
+                  underprivileged children and distribute educational
+                  resources...
                 </p>
-              
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
-                  DONATE NOW
-                </Button>
+
+                <Link href="/donate">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+                    DONATE NOW
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -58,12 +62,15 @@ export default function CausesPage() {
                   Women's Health & Sanitation
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Join us in providing sanitary pads to girls in need and conducting health education workshops...
+                  Join us in providing sanitary pads to girls in need and
+                  conducting health education workshops...
                 </p>
 
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-green-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
-                  DONATE NOW
-                </Button>
+                <Link href="/donate">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+                    DONATE NOW
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -81,13 +88,15 @@ export default function CausesPage() {
                   Legal Advocacy & Human Rights
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Witness the incredible journey of providing legal aid workshops for women and vulnerable
-                  populations...
+                  Witness the incredible journey of providing legal aid
+                  workshops for women and vulnerable populations...
                 </p>
 
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-blue-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
-                  DONATE NOW
-                </Button>
+                <Link href="/donate">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+                    DONATE NOW
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -101,14 +110,19 @@ export default function CausesPage() {
                 />
               </div>
               <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Workshops & Mentorship</h3>
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
+                  Workshops & Mentorship
+                </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
-                  Unleash the potential through entrepreneurship, leadership, and business skill development programs...
+                  Unleash the potential through entrepreneurship, leadership,
+                  and business skill development programs...
                 </p>
-                
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/30">
-                  DONATE NOW
-                </Button>
+
+                <Link href="/donate">
+                  <Button className="w-full bg-orange-500 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 text-white font-medium py-2.5 sm:py-3 text-sm sm:text-base rounded-lg transition-all duration-300">
+                    DONATE NOW
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -123,5 +137,5 @@ export default function CausesPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

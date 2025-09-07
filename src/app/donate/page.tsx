@@ -6,7 +6,7 @@ const Donate = () => {
   return (
     <div>
       <Navbar />
-      
+
       <div className="p-8">
         {/* Page Title */}
         <div className="text-center mb-12">
@@ -20,19 +20,17 @@ const Donate = () => {
         </div>
 
         {/* Flexbox layout */}
-        <div className="flex flex-col lg:flex-row items-stretch justify-center max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-stretch justify-center max-w-6xl mx-auto ">
           {/* Left side - Form */}
           <div className="flex-1 flex">
-            <div className="w-full flex items-center">
-              <div className="w-full bg-white/80 backdrop-blur-lg shadow-xl rounded-2xl p-8 border border-gray-100">
-                <DonationForm />
-              </div>
+            <div className="w-full bg-white/80 backdrop-blur-lg shadow-xl rounded-2xl p-8 border border-gray-100 flex flex-col justify-center h-full">
+              <DonationForm />
             </div>
           </div>
 
           {/* Right side - Illustration (hidden on mobile) */}
           <div className="hidden lg:flex flex-1">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl h-full">
               <img
                 src="/images/image2.png"
                 alt="People volunteering and donating to charity"

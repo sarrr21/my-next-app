@@ -228,7 +228,12 @@ const DonationForm = () => {
               rows={3}
             />
           </div>
-
+          <p className="text-gray-400 text-sm">
+          The Tausi Likokola Global
+Empowerment Foundation (TLGEF) is recognized by the IRS as a 501(c)
+(3) public charity (EIN:
+39-3688816). Contributions are tax-deductible to the fullest extent permitted by law. 🇺🇸
+            </p>
           <Button
             type="submit"
             size="lg"

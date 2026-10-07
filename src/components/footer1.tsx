@@ -97,8 +97,8 @@ export default function FooterSection() {
 
     
        <iframe
-  src="https://TLGEF.substack.com/embed?background=transparent&hideFooter=true"
-  className="w-full h-64 border border-gray-300 rounded-lg bg-transparent"
+  src="https://www.zeffy.com/en-US/newsletter-form/subscribe-to-our-newsletter-26"
+  className="w-full h-68 border border-gray-300 rounded-lg bg-transparent"
   frameBorder="0"
   scrolling="no"
 ></iframe>

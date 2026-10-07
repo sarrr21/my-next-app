@@ -8,6 +8,7 @@ import Navbar from "@/components/navbar";
 import Partners from "@/components/Partner";
 import Initiatives from "@/components/seaction";
 import TestimonialsSection from "@/components/testimonial";
+import UpcomingEventsSection from "@/components/upcoming-events";
 
 
 
@@ -19,6 +20,7 @@ export default function HomePage() {
       <HeroSection />
       <Initiatives />
       <HelpingHandSection />
+      <UpcomingEventsSection />
       <Partners />
       <TestimonialsSection />
       <ContactPage />

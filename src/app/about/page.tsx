@@ -3,6 +3,7 @@ import Footer from "@/components/footer";
 import FooterSection from "@/components/footer1";
 import Navbar from "@/components/navbar";
 import TimelineSection from "@/components/timeline";
+import TeamSection from "@/components/team";
 import { Badge } from "@/components/ui/badge";
 
 import type { Metadata } from "next";
@@ -52,6 +53,7 @@ export default function AboutPage() {
       
     </main>
     <TimelineSection />
+    {/* <TeamSection /> */}
     <ContactPage />
     <FooterSection />
     </>

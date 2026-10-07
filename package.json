@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export:program-cards": "node scripts/export-program-cards.mjs"
   },
   "dependencies": {
     "@radix-ui/react-label": "^2.1.7",
@@ -32,6 +33,7 @@
     "@types/nodemailer": "^7.0.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "playwright": "^1.63.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5"

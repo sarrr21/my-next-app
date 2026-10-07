@@ -53,7 +53,7 @@ export default function AboutPage() {
       
     </main>
     <TimelineSection />
-    {/* <TeamSection /> */}
+    <TeamSection />
     <ContactPage />
     <FooterSection />
     </>

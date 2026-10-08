@@ -35,6 +35,16 @@ export const teamMembers: TeamMember[] = [
     bio: "James T. Harris, Esq. is a business and legal professional with 30 years of experience, including 20 years as Corporate Intellectual Property Counsel for UPS. He is the Founder of Trademark Creations, specializing in trademark maintenance, monitoring, and licensing.Mr. Harris has extensive experience in intellectual property, technology, advertising, sponsorships, contracts, and business agreements. He holds a law degree from Chicago-Kent College of Law, a Bachelor of Science in Mechanical Engineering from Tennessee State University, and an MBA from Emory University’s Goizueta Business School.He is also deeply committed to community service and has served on numerous nonprofit, education, and community boards, supporting initiatives that create opportunities and strengthen underserved communities.",
   },
   {
+    id: "board-member-5",
+    name: "DR. CEABERT GRIFFITH",
+    image: "/images/Bert.png",
+    imageAlt: "TLGEF board member",
+    linkedin: "https://www.linkedin.com/in/dr-ceabert-j-griffith-1609103b7/",
+    summary:
+      "Public health and wellness expert advancing TLGEF’s mission to promote health equity and empower underserved communities.",
+    bio: "Dr. Ceabert Griffith is a Family Medicine and Public Health expert, wellness coach, and global public health consultant committed to health equity and community empowerment. He serves as an Adjunct Professor of Health Sciences at Touro University Worldwide and conducts research in biobehavioral science, focusing on lifestyle, environment, and long-term health outcomes.An award-winning health writer, Dr. Griffith has authored three books on wellness and preventive health. Inspired by his experience living in Okinawa, Japan, he combines evidence-based medicine with insights from Okinawan approaches to healthy aging and longevity. He brings his clinical, academic, and public health expertise to TLGEF, supporting its mission to uplift and empower underserved communities worldwide.",
+  },
+  {
     id: "board-member-4",
     name: "DR. VANESSA M. GRIFFITH",
     image: "/images/Vanessa.jpg",

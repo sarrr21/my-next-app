@@ -37,7 +37,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "board-member-5",
     name: "DR. CEABERT GRIFFITH",
-    image: "/images/Bert.png",
+    image: "/images/IMGs.jpg",
     imageAlt: "TLGEF board member",
     linkedin: "https://www.linkedin.com/in/dr-ceabert-j-griffith-1609103b7/",
     summary:

@@ -2,11 +2,27 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ArrowRightIcon } from "lucide-react";
+import { ArrowRight, ArrowRightIcon, Share2 } from "lucide-react";
+import { useState } from "react";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 
 export default function Programs() {
+  const [copied, setCopied] = useState(false);
+
+  const shareVideo = async () => {
+    const url = `${window.location.origin}/#founder-video`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: "The Journey to Tausi Likokola Global Empowerment Foundation", url });
+      } catch {}
+      return;
+    }
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="">
 
@@ -64,13 +80,13 @@ export default function Programs() {
       </div>
 
       {/* Founder Biography Video */}
-      <div className="max-w-5xl mx-auto space-y-6">
+      <div id="founder-video" className="max-w-5xl mx-auto space-y-6 scroll-mt-24">
         <div className="text-center space-y-2">
           <p className="text-orange-500 text-xs sm:text-sm font-medium tracking-wider uppercase">
             Her Story
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
-            The Journey of Tausi Likokola
+            The Journey to Tausi Likokola Global Empowerment Foundation
           </h2>
         </div>
         <div className="rounded-xl overflow-hidden shadow-lg bg-black">
@@ -84,6 +100,15 @@ export default function Programs() {
           >
             Your browser does not support the video tag.
           </video>
+        </div>
+        <div className="flex justify-center">
+          <button
+            onClick={shareVideo}
+            className="flex items-center gap-1.5 border border-orange-500 rounded-full px-3 py-1 text-xs font-medium text-gray-800 hover:bg-orange-50 transition-all"
+          >
+            <Share2 size={12} className="text-orange-500" />
+            <span>{copied ? "LINK COPIED!" : "SHARE VIDEO"}</span>
+          </button>
         </div>
       </div>
 

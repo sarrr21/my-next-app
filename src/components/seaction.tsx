@@ -60,7 +60,31 @@ export default function Programs() {
         </div>
 
         {/* Image */}
-       
+
+      </div>
+
+      {/* Founder Biography Video */}
+      <div className="max-w-5xl mx-auto space-y-6">
+        <div className="text-center space-y-2">
+          <p className="text-orange-500 text-xs sm:text-sm font-medium tracking-wider uppercase">
+            Her Story
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground">
+            The Journey of Tausi Likokola
+          </h2>
+        </div>
+        <div className="rounded-xl overflow-hidden shadow-lg bg-black">
+          <video
+            src="/videos/tausivideo.mp4"
+            poster="/images/founder.png"
+            controls
+            playsInline
+            preload="metadata"
+            className="w-full aspect-video object-contain"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
 
       {/* Education & Skill Development */}

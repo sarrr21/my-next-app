@@ -2,13 +2,20 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, ArrowRightIcon, Share2 } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, ArrowRightIcon, Play, Share2 } from "lucide-react";
+import { useRef, useState } from "react";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 
 export default function Programs() {
   const [copied, setCopied] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const playVideo = () => {
+    setVideoStarted(true);
+    videoRef.current?.play();
+  };
 
   const shareVideo = async () => {
     const url = `${window.location.origin}/#founder-video`;
@@ -89,17 +96,37 @@ export default function Programs() {
             The Journey to Tausi Likokola Global Empowerment Foundation
           </h2>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-lg bg-black">
+        <div className="relative rounded-xl overflow-hidden shadow-lg bg-black">
           <video
+            ref={videoRef}
             src="/videos/tausivideo.mp4"
-            poster="/images/founder.png"
-            controls
+            controls={videoStarted}
             playsInline
             preload="metadata"
+            onPlay={() => setVideoStarted(true)}
             className="w-full aspect-video object-contain"
           >
             Your browser does not support the video tag.
           </video>
+          {!videoStarted && (
+            <button
+              onClick={playVideo}
+              aria-label="Play video"
+              className="group absolute inset-0 w-full h-full"
+            >
+              <Image
+                src="/images/bioimage.jpeg"
+                alt="Tausi Likokola"
+                fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover"
+              />
+              <span className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-orange-500 text-white shadow-lg group-hover:scale-110 transition-transform">
+                <Play size={32} className="ml-1" fill="currentColor" />
+              </span>
+            </button>
+          )}
         </div>
         <div className="flex justify-center">
           <button

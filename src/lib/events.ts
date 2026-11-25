@@ -4,7 +4,8 @@ export type FoundationEvent = {
   date: string;
   time: string;
   location: string;
- 
+  videos?: string[];
+  videoTitle?: string;
 };
 
 export const events: FoundationEvent[] = [
@@ -31,7 +32,8 @@ export const events: FoundationEvent[] = [
     date: "2026-11-7",
     time: "4:00 PM – 8:00 PM EST",
     location: "461 Sandy Creek Rd Ste 4109, Fayetteville, GA 30214, USA",
-    
+    videos: ["/videos/video5.mp4", "/videos/video6.mp4"],
+    videoTitle: "TLGEF Community Networking & Philanthropy Meet & Greet",
   },
  
 ];

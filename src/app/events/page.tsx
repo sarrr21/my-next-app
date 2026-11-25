@@ -3,7 +3,12 @@ import Navbar from "@/components/navbar";
 import FooterSection from "@/components/footer1";
 import EventCard from "@/components/event-card";
 import { Badge } from "@/components/ui/badge";
-import { getPastEvents, getUpcomingEvents } from "@/lib/events";
+import { Calendar, MapPin } from "lucide-react";
+import {
+  formatEventDate,
+  getPastEvents,
+  getUpcomingEvents,
+} from "@/lib/events";
 
 export const metadata: Metadata = {
   title: "Events | TLGEF",
@@ -14,6 +19,7 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   const upcoming = getUpcomingEvents();
   const past = getPastEvents();
+  const highlights = past.filter((event) => event.videos?.length);
 
   return (
     <>
@@ -54,6 +60,63 @@ export default function EventsPage() {
               </div>
             )}
           </div>
+
+          {highlights.length > 0 && (
+            <div className="mb-12">
+              <div className="flex gap-2">
+                <h2 className="text-gray-500">HIGHLIGHTS</h2>
+                <div className="border-b w-20 mb-2 border-orange-500" />
+              </div>
+              <p className="text-3xl font-bold mb-8 mt-4">Event Highlights</p>
+              <div className="space-y-12">
+                {highlights.map((event) => (
+                  <div
+                    key={event.id}
+                    id={event.id}
+                    className="max-w-5xl mx-auto space-y-4 scroll-mt-24"
+                  >
+                    <div className="text-center space-y-2">
+                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
+                        {event.videoTitle ?? event.title}
+                      </h3>
+                      <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm text-gray-600">
+                        <span className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4 text-orange-600" />
+                          {formatEventDate(event.date)}
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <MapPin className="h-4 w-4 text-orange-600" />
+                          {event.location}
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      className={`grid gap-6 ${
+                        event.videos!.length > 1 ? "md:grid-cols-2" : ""
+                      }`}
+                    >
+                      {event.videos!.map((video) => (
+                        <div
+                          key={video}
+                          className="rounded-xl overflow-hidden shadow-lg bg-black"
+                        >
+                          <video
+                            src={video}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="w-full aspect-video object-contain"
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {past.length > 0 && (
             <div>
